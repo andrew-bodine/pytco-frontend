@@ -1,0 +1,21 @@
+/*clear bootstrap*/
+.btn, .btn-default, .thumbnail {
+	border: none;
+}
+/* end clear bootstrap*/
+/* color variables */
+$logo-green: #8cc63f;
+$green-accent: #006600;
+$logo-pink: #dd2070;
+$pink-accent: #7C1240;
+$logo-orange: #f15a22;
+$orange-accent: #9A310A;
+$logo-blue: #00A3C0;
+$blue-accent: #006475;
+$logo-yellow: #efde1a;
+$yellow-accent: #817707;
+$header-font: 'Galdeano', sans-serif;
+
+.section-header, .page-title {
+		font-family: $header-font;
+}

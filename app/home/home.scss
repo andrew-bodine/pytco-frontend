@@ -1,0 +1,75 @@
+.featBlock {
+	min-height: 250px;
+	h2{
+		font-family: $header-font;
+	}
+}
+#featured{
+	background-color: $logo-pink;
+	color: #ffffff;
+	h2{
+		color: $pink-accent;
+	}
+	h6{
+		color: #333333;
+	}
+	button{
+		color: #ffffff;
+		background-color: $pink-accent;
+	}
+}
+.visit{
+	background-color: $logo-yellow;
+	background-size: 100% 100%;
+	h2{
+		color: $yellow-accent;
+	}
+}
+.season{
+	text-align: center;
+	background-color: $logo-blue;
+	h2 {
+		color: $blue-accent;
+	}
+	button{
+		color: #ffffff;
+		background-color: $blue-accent;
+	}
+}
+.sampson{
+	background-color: $logo-green;
+	color: #ffffff;
+	h2{
+		color: $green-accent;
+	}
+	img{
+		width: 100%;
+		margin-top: 10%;
+		border: 3px solid #ffffff;
+		box-shadow: 2px 2px 2px #000000;
+	}
+}
+/*carousel*/
+#indexCarousel{
+	background-color: #000;
+	height: 250px;
+	overflow: hidden;
+	.controls {
+		position: absolute;
+		z-index: 10;
+		background: none;
+		color: #fff;
+		border: none;
+		font-size: 80px;
+		opacity: .8;
+		padding: 0;
+		top: 85px;
+		text-shadow: 2px 2px #000;
+	}
+	.right-control {
+		right: 0px;
+	}
+	.left-control {
+		left: 0px;
+	}
+}

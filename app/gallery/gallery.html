@@ -1,0 +1,23 @@
+<span ng-include="'gallery/galleryModal.html'"></span>
+
+<div id="galleryPage">
+	<div class="row page-title">
+		<h1>Gallery</h1>
+	</div>
+
+	<div class="row">
+
+    <!-- AngularJS Loop on albums -->
+		<div class="col-md-3 album" ng-repeat="album in albums" ng-cloak>
+			<a href="" data-toggle="modal" data-target="#myModal">
+				<div class="thumbnail">
+					<img ng-src="{{album.images[0].src}}">
+					<div class="caption">
+						<h5>{{album.name}}</h5>
+					</div>
+				</div>
+			</a>
+		</div>
+
+	</div>
+</div>

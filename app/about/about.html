@@ -1,0 +1,66 @@
+<div class="row mission">
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8">
+			<h3 class="section-header">Our Mission</h3>
+			<p>"To enhance the quality of life in our community by providing theater experiences and education in order to promote participation, appreciation, and understanding of the arts."</p>
+		</div>
+	</div>
+	<div class="row">
+		<button type="button" class="btn btn-default" data-toggle="collapse" data-target="#missionCollapse" aria-expanded="false" aria-controls="missionCollapse">learn more about our mission <span class="glyphicon glyphicon-chevron-down"></span></button>
+	</div>
+</div>
+<div class="row about-mission collapse" id="missionCollapse">
+	<h3>Our company fulfills this mission by:</h3>
+	<div class="col-md-6">
+		<ul>
+			<li>Selecting plays and musicals to be performed</li>
+			<li>Developing original works for community groups</li>
+			<li>Choosing works that utilize performers in various age groups</li>
+			<li>Providing personnel to produce and direct each project</li>
+		</ul>
+	</div>
+	<div class="col-md-6">
+		<ul>
+			<li>Providing experiential education for novice participants</li>
+			<li>Performing for the general public and individual groups</li>
+			<li>Supporting the drama clubs and youth programs in local school and communities</li>
+			<li>Awarding scholarship(s) to graduating high school seniors</li>
+		</ul>
+	</div>
+</div>
+<div class="row about-pytco">
+	<h3 class="section-header">PYTCo History</h3>
+	<div class="col-md-offset-1 col-md-10">
+
+	<p>The Penn Yan Theatre Company was created in 1978 and has provided Penn Yan and the surrounding community years of popular entertainment through their successful community theatre group.<br>
+	<br>
+	PYTCo delivers quality musicals throughout the year including variety shows, musicals and plays to enthusiastic audiences numbering 500 to 1,000 or more per production. The productions offer unique and affordable live shows to the Penn Yan public that is an experience not duplicated elsewhere in the local community.<br>
+	<br>
+	PYTCo has succeeded by countless hours of volunteer support and the generosity of the community. PYTCo volunteers are from ages five to seventy-five. These volunteers are taught the production process, including; performance, costume, makeup, set design and building, promotion, ticket sales, and house management.
+	</p>
+	</div>
+</div>
+<div class="row board-members">
+	<h3 class="section-header">Board Members</h3>
+	<div class="row">
+
+		<div class="col-md-3 thumbnail officer" ng-repeat="officer in officers" ng-cloak>
+			<img ng-src="{{officer.src}}" alt="..." class="img-circle">
+			<div class="caption">
+        <h5>{{officer.name}}</h5>
+        <h6 class="position">{{officer.position}}</h6>
+			</div>
+		</div>
+
+	</div>
+	<div class="row">
+
+		<div class="col-md-3 thumbnail" ng-repeat="member in members" ng-cloak>
+			<img ng-src="{{member.src}}" alt="..." class="img-circle" >
+			<div class="caption">
+        <h5>{{member.name}}</h5>
+			</div>
+		</div>
+
+	</div>
+</div>

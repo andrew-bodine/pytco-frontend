@@ -1,0 +1,22 @@
+.staticLeft{
+	text-align: center;
+	.logo {
+		margin-bottom: 50px;
+	}
+	.nav {
+		margin-bottom: 100px;
+	}
+	.box-office{
+		margin-bottom: 1em;
+		p{
+			font-size: .8em;
+		}
+	}
+	.social-media{
+		img {
+			width: 30px;
+			height: 30px;
+			margin: .5em;
+		}
+	}
+}

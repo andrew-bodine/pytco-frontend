@@ -1,0 +1,32 @@
+.contactPage{
+	text-align: center;
+	.page-title {
+		color: $logo-pink;
+		border-bottom: 5px solid $pink-accent;
+	}
+	.glyph {
+		font-size: 2em;
+	}
+	.contact-info-row{
+		margin: 3em 0;
+		.info-block {
+			h4 {
+				font-weight: bold;
+				font-family: $header-font;
+			}
+		}
+		.email-info {
+			a {
+				color: black;
+			}
+			h5 {
+				color: $logo-pink;
+			}
+		}
+	}
+	.map {
+		display: block;
+		margin: 0 auto;
+		padding: 0;
+	}
+}
