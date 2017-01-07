@@ -9,24 +9,32 @@
       <div class="modal-body">
       <!-- carousel -->
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
         <!-- Indicators -->
         <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+
+          <!-- Loop through the modalAlbum.images in GalleryCtrl's scope -->
+          <li
+            data-target="#carousel-example-generic"
+            data-slide-to="{{$index}}"
+            class="{{$index == 0 ? 'active' : ''}}"
+            ng-repeat="image in modalAlbum.images track by $index">
+          </li>
+
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <!-- <img src="/images/gallery/AllShookUp/all-shook-up.jpg" alt="..."> -->
+
+          <!-- Loop through the modalAlbum.images in GalleryCtrl's scope -->
+          <div
+            class="item {{$index == 0 ? 'active' : ''}}"
+            ng-repeat="image in modalAlbum.images track by $index"
+            ng-cloak
+          >
+            <img ng-src="{{image.src}}" alt="...">
           </div>
-          <div class="item">
-            <!-- <img src="/images/gallery/AllShookUp/all-shook-up-2.jpg" alt="..."> -->
-          </div>
-          <div class="item">
-            <img src="#" alt="...">
-          </div>
+
         </div>
 
         <!-- Controls -->

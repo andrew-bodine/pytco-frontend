@@ -21,6 +21,16 @@ function GalleryCtrl ($scope, CloudFront) {
   $scope.albums = [];
   var albumIndex = [];
 
+  // Points to an album in $scope.albums.
+  $scope.modalAlbum = {};
+
+  // viewAlbum updates $scope.modalAlbum to the album index that was clicked.
+  $scope.viewAlbum = function (index) {
+    $scope.modalAlbum = $scope.albums[index];
+  };
+
+  // Query CloudFront service for the gallery keys that correspond
+  // to the gallery folder in S3 pytco bucket.
   CloudFront.get('gallery/')
   .then(function (keys) {
 
