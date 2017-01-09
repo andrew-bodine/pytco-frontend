@@ -17,7 +17,6 @@ module.exports = function (grunt) {
     }
   }
 
-  var tasks = loadTasks('./tasks');
-
-  invokeTasks(tasks);
+  invokeTasks(loadTasks('./tasks-local'));
+  invokeTasks(loadTasks('./tasks'))
 };

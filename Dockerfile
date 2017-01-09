@@ -26,7 +26,7 @@ RUN bower install --allow-root
 
 COPY . .
 
-RUN grunt
+RUN grunt compileAssets
 
 EXPOSE 8000
 
