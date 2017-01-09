@@ -10,7 +10,9 @@ var module = angular.module('pytco', [
   'pytco.contact'
 ]);
 
-module.config(['$routeProvider', function ($routeProvider) {
+module.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+  // $locationProvider.hashPrefix(['!']);
+
   $routeProvider.otherwise({redirectTo: '/'});
 }]);
 
