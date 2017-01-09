@@ -57,8 +57,6 @@ function resizeImg(x){
     var image = x;
     var ogHeight = image.height;
     var ogWidth = image.width;
-    console.log('Height: ', image.height);
-    console.log('Width: ', image.width);
     var ratio = ogWidth / ogHeight;
     var newHeight = 250;
     var newWidth = newHeight * ratio;

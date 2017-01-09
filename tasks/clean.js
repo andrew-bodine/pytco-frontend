@@ -1,11 +1,11 @@
 module.exports = function (grunt) {
   grunt.config.set('clean', {
-    dev: [
+    build: [
       '.build/dev/**',
       '.sass-cache'
     ],
-    build: [
-      '.build/prod',
+    dist: [
+      '.build/dist/**',
       '.sass-cache'
     ]
   });

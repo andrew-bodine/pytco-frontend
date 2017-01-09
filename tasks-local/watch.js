@@ -5,7 +5,9 @@ module.exports = function(grunt) {
 
       // Assets to watch:
       files: [
-        'app/**/*'
+        'app/**/*',
+        'tasks/**/*',
+        'tasks-local/**/*'
       ],
 
       // When assets are changed:

@@ -1,7 +1,6 @@
 module.exports = function (grunt) {
   grunt.config.set('copy', {
-
-    dev: {
+    build: {
       files: [
         {
           expand: true,
@@ -15,9 +14,19 @@ module.exports = function (grunt) {
       ]
     },
 
-    // build: {
-    //   files: []
-    // }
+    dist: {
+      files: [
+        {
+          expand: true,
+          cwd: './app',
+          src: [
+            'bower_components/**/*',
+            '**/*.html'
+          ],
+          dest: '.build/dist'
+        }
+      ]
+    }
 
   });
 
