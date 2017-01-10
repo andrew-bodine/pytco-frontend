@@ -36,11 +36,10 @@ function FilmstripCtrl ($scope, CloudFront) {
         // start the rendering logic
         if (loaded == keys.length) {
           getSlides(children);
-          fillViewer(0);
+          fillViewer(firstSlide);
 
           $scope.$apply();
         }
-
       };
       children.push(img);
     });
@@ -99,7 +98,6 @@ function fillViewer(x) {
     var filmStrip = document.getElementById('filmStrip');
     wrap(x);
     var index = firstSlide;
-    // console.log(index + 'index');
     var filmArr = [];
     var filmLength = 0;
     measure();

@@ -14,8 +14,14 @@ $logo-blue: #00A3C0;
 $blue-accent: #006475;
 $logo-yellow: #efde1a;
 $yellow-accent: #817707;
+$title-gray: #3c3c3c;
 $header-font: 'Galdeano', sans-serif;
 
-.section-header, .page-title {
+.section-header {
 		font-family: $header-font;
+}
+
+.page-title {
+	font-family: $header-font;
+	color: $title-gray;
 }

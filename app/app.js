@@ -4,6 +4,7 @@ var module = angular.module('pytco', [
   'ngRoute',
   'pytco.aws',
   'pytco.home',
+  'pytco.season',
   'pytco.gallery',
   'pytco.about',
   'pytco.sampson',

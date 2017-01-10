@@ -1,15 +1,18 @@
 .featBlock {
 	min-height: 250px;
-	h2{
+/*	h2{
 		font-family: $header-font;
-	}
+	}*/
+}
+.section-header {
+	color: #fff;
 }
 #featured{
 	background-color: $logo-pink;
 	color: #ffffff;
-	h2{
+/*	h2{
 		color: $pink-accent;
-	}
+	}*/
 	h6{
 		color: #333333;
 	}
@@ -21,16 +24,16 @@
 .visit{
 	background-color: $logo-yellow;
 	background-size: 100% 100%;
-	h2{
+/*	h2{
 		color: $yellow-accent;
-	}
+	}*/
 }
 .season{
 	text-align: center;
 	background-color: $logo-blue;
-	h2 {
+/*	h2 {
 		color: $blue-accent;
-	}
+	}*/
 	button{
 		color: #ffffff;
 		background-color: $blue-accent;
@@ -39,9 +42,9 @@
 .sampson{
 	background-color: $logo-green;
 	color: #ffffff;
-	h2{
+/*	h2{
 		color: $green-accent;
-	}
+	}*/
 	img{
 		width: 100%;
 		margin-top: 10%;
