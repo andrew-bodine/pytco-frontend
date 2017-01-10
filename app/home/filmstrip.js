@@ -23,18 +23,27 @@ function FilmstripCtrl ($scope, CloudFront) {
   CloudFront.get('filmstrip/')
   .then(function (keys) {
     var children = [];
+    var loaded = 0;
     slidesArr = [];
 
     keys.forEach(function (k) {
       var img = document.createElement('img');
       img.src = new URL(k, CloudFront.baseUrl);
+      img.onload = function () {
+        loaded = loaded + 1;
+
+        // If this is the last image to load
+        // start the rendering logic
+        if (loaded == keys.length) {
+          getSlides(children);
+          fillViewer(0);
+
+          $scope.$apply();
+        }
+
+      };
       children.push(img);
     });
-
-    getSlides(children);
-    fillViewer(0);
-
-    $scope.$apply();
   })
   .catch(function (err) {
     console.error('Failed to get filmstrip media from CloudFront: ', err);
@@ -49,6 +58,8 @@ function resizeImg(x){
     var image = x;
     var ogHeight = image.height;
     var ogWidth = image.width;
+    console.log('Height: ', image.height);
+    console.log('Width: ', image.width);
     var ratio = ogWidth / ogHeight;
     var newHeight = 250;
     var newWidth = newHeight * ratio;
