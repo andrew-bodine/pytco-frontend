@@ -56,7 +56,7 @@ function CloudFront ($http) {
       index({cache: true})
       .then(function () {
         var filtered = distribution.filter(function (e) {
-          return e.indexOf(prefix) > -1;
+          return e.indexOf(prefix) == 0;
         });
 
         resolve(filtered);
