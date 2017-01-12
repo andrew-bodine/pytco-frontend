@@ -26,31 +26,42 @@ function GalleryCtrl ($scope, CloudFront) {
 
   // viewAlbum updates $scope.modalAlbum to the album index that was clicked.
   $scope.viewAlbum = function (index) {
+    CloudFront.get('gallery/' + $scope.albums[index].name + '/')
+    .then(function (keys) {
+      keys.forEach(function (k) {
+        var url = new URL(k, CloudFront.baseUrl);
+
+        $scope.albums[index].images.push({src: url.href});
+      });
+
+      $scope.$apply();
+    })
+    .catch(function (err) {
+      console.error('Failed to get album media from CloudFront: ', err);
+    });
+
     $scope.modalAlbum = $scope.albums[index];
   };
 
-  // Query CloudFront service for the gallery keys that correspond
-  // to the gallery folder in S3 pytco bucket.
-  CloudFront.get('gallery/')
+  // Query CloudFront service for the keys that correspond
+  // to the gallery-thumbnails folder in S3 pytco bucket.
+  CloudFront.get('gallery-thumbnails/')
   .then(function (keys) {
 
     keys.forEach(function (k) {
       var parts = k.split('/').slice(1);
 
       if (albumIndex.indexOf(parts[0]) <= -1) {
-        albumIndex.push(parts[0]);
-
-        $scope.albums.push({
-          name: parts[0],
-          images: []
-        });
-      }
-
-      if (parts[1] !== '') {
-        var index = albumIndex.indexOf(parts[0]);
+        var name = parts[0].split('.')[0];
         var url = new URL(k, CloudFront.baseUrl);
 
-        $scope.albums[index].images.push({src: url.href});
+        albumIndex.push(name);
+
+        $scope.albums.push({
+          name: name,
+          thumbnail: {src: url.href},
+          images: []
+        });
       }
     });
 

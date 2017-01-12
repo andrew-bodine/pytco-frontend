@@ -10,7 +10,7 @@ module.service('CloudFront', [
 function CloudFront ($http) {
 
   // TODO: Make this easily configurable
-  var baseUrl = 'https://d1w9h55r1xlbvp.cloudfront.net';
+  var baseUrl = 'https://dmzlbjh85nwo5.cloudfront.net/';
   this.baseUrl = baseUrl;
 
   var distribution = [];

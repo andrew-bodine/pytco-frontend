@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
   grunt.registerTask('release', [
-    'shell:exec'
+    'shell:dist',
+    'shell:release'
   ]);
 };

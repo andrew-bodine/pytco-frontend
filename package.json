@@ -6,6 +6,7 @@
   "devDependencies": {
     "bower": "^1.7.7",
     "grunt": "^1.0.1",
+    "grunt-aws": "^0.6.2",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
