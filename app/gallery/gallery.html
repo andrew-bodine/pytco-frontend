@@ -10,7 +10,7 @@
 		<div class="col-md-3 album" ng-repeat="album in albums track by $index" ng-cloak ng-click="viewAlbum($index)">
 			<a href="" data-toggle="modal" data-target="#myModal">
 				<div class="thumbnail">
-					<img ng-src="{{album.images[0].src}}">
+					<img ng-src="{{album.thumbnail.src}}">
 					<div class="caption">
 						<h5>{{album.name}}</h5>
 					</div>
