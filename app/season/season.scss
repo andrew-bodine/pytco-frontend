@@ -1,0 +1,22 @@
+#seasonPage {
+	.section-header {
+		color: $pink-accent;
+		border-bottom: 1px solid $pink-accent;
+	}
+	.event-date {
+		width: 150px;
+		background-color: $pink-accent;
+		color: #fff;
+		text-align: center;
+	}
+	img {
+		height: 100px;
+		width: 100px;
+	}
+	li:nth-child(even) {
+		background-color: #f2f2f2;
+	}
+	li:nth-child(odd) {
+		background-color: #ccc;
+	}
+}

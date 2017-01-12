@@ -103,9 +103,9 @@ function fillViewer(x) {
         if (filmLength < viewerX) {
             filmArr.push(slidesArr[index]);
             filmLength += slidesArr[index].width;
-            // if (index == slidesArr.length - 1) {
-            //     index = -1;
-            // }
+            if (index == slidesArr.length - 1) {
+                index = -1;
+            }
         } else break;
     }
     filmStrip.setAttribute('style', 'width:' + filmLength + 'px');
