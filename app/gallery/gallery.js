@@ -49,7 +49,6 @@ function GalleryCtrl ($scope, CloudFront) {
   .then(function (keys) {
 
     keys.forEach(function (k) {
-      console.log(k);
       var parts = k.split('/').slice(1);
 
       if (albumIndex.indexOf(parts[0]) <= -1) {
