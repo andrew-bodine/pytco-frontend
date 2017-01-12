@@ -1,5 +1,8 @@
+# OSX
+.DS_Store
+
 node_modules/
 bower_components/
 
-# OSX
-.DS_Store
+# AWS Credentials
+credentials.json

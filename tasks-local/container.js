@@ -16,8 +16,12 @@ module.exports = function (grunt) {
       command: 'docker run --name pytco-frontend -d -p 8000:8000 pytco-frontend'
     },
 
-    exec: {
+    dist: {
       command: 'docker exec pytco-frontend grunt dist'
+    },
+
+    release: {
+      command: 'docker exec pytco-frontend grunt s3'
     }
   });
 
