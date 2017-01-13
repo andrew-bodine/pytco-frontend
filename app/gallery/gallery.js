@@ -24,8 +24,11 @@ function GalleryCtrl ($scope, CloudFront) {
   // Points to an album in $scope.albums.
   $scope.modalAlbum = {};
 
-  // viewAlbum updates $scope.modalAlbum to the album index that was clicked.
+  // viewAlbum updates $scope.modalAlbum to the album index that was clicked,
+  // and loads the album images from CloudFront.
   $scope.viewAlbum = function (index) {
+    if ($scope.albums[index].images.length > 0) return;
+
     CloudFront.get('gallery/' + $scope.albums[index].name + '/')
     .then(function (keys) {
       keys.forEach(function (k) {
