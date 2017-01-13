@@ -25,6 +25,9 @@
 	.visit{
 		background-color: $logo-yellow;
 		background-size: 100% 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
 	/*	h2{
 			color: $yellow-accent;
 		}*/
@@ -35,6 +38,10 @@
 	/*	h2 {
 			color: $blue-accent;
 		}*/
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		button{
 			color: #ffffff;
 			background-color: $blue-accent;
