@@ -12,20 +12,22 @@ module.exports = function (grunt) {
 
     templates: {
       cwd: '.build/dist/',
-      src: '**/*.html',
-      dest: 'app/'
+      src: '**/*.html'
     },
 
     scripts: {
       cwd: '.build/dist',
-      src: '**/*.min.js',
-      dest: 'app/'
+      src: '**/*.min.js'
     },
 
     styles: {
       cwd: '.build/dist',
-      src: '**/*.min.css',
-      dest: 'app/'
+      src: '**/*.min.css'
+    },
+
+    fonts: {
+      cwd: '.build/dist',
+      src: '**/*.{ttf,woff,woff2}'
     }
   });
 

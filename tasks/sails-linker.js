@@ -15,16 +15,10 @@ var bundles = {
 
   dist: {
     css: [
-      // 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
       '.build/dist/bower_components/bootstrap/dist/css/bootstrap.min.css',
       '.build/dist/app.min.css'
     ],
     js: [
-      // {
-      //   src: 'https://code.jquery.com/jquery-3.1.1.min.js',
-      //   integrity: 'sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=',
-      //   crossorigin: 'anonymous'
-      // },
       '.build/dist/bower_components/jquery/dist/jquery.min.js',
       '.build/dist/bower_components/angular/angular.min.js',
       '.build/dist/bower_components/angular-route/angular-route.min.js',
