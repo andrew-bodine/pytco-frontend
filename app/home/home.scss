@@ -21,6 +21,23 @@
 			color: #ffffff;
 			background-color: $pink-accent;
 		}
+		img {
+			width: 100%;
+		}
+		.event-date {
+			color: $title-gray;
+			font-weight: bold;
+		}
+		.carousel-control {
+			position: relative;
+		}
+		.featured-directions {
+			margin-top: 20px;
+			text-align: right;
+		}
+		button {
+			float: right;
+		}
 	}
 	.visit{
 		background-color: $logo-yellow;

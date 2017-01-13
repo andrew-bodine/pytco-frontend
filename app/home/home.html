@@ -12,7 +12,16 @@
 
   <!-- featured -->
   <div class="col-md-8 featBlock" id="featured">
-    <h2 class="section-header">Featured</h2>
+    <div class="row">
+      <h2 class="section-header col-md-6">Featured</h2>
+  <!-- Controls -->
+      <p class="col-md-6 featured-directions"> 
+        <span class="carousel-control" href="#featured-carousel" role="button" data-slide="prev">last</span> | 
+        <span class="carousel-control" href="#featured-carousel" role="button" data-slide="next">next</span>
+      </p>
+  
+    </div>
+    <span ng-include="'home/featuredEvent.html'"></span>
   </div>
 
   <!-- visit -->
