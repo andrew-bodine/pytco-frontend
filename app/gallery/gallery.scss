@@ -4,7 +4,12 @@
 		margin-bottom: 2em;
 	}
 	img{
-		border: 3px solid #ccc;
+		/*
+			TODO: Don't set height here so we avoid squishing
+						improperly sized thumbnails
+		*/
+		height: 130px;
+		// border: 3px solid #ccc;
 		box-shadow: 5px 5px 5px #aaa;
 	}
 	input{
