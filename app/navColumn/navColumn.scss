@@ -23,3 +23,44 @@
 		}
 	}
 }
+#mobileNav {
+	/*height: 150px;*/
+	.logo {
+		img {
+			max-height: 150px;
+			width: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	.navMenu {
+		text-align: right;
+/*		height: 150px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		span {
+			font-size: 1.5em;
+		} */
+	}
+}
+#mobileFooter {
+	padding: 1em; 
+	font-family: $header-font;
+	background-color: #c6c6c6;
+	text-align: center;
+	.social-media {
+		img {
+			width: 50px;
+			height: 50px;
+			margin: .5em;
+		}
+	}
+	.box-office {
+		margin-bottom: 1em;
+		p{
+			font-size: 1.5em;
+		}
+	}
+}
