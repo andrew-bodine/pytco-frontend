@@ -17,14 +17,14 @@ module.controller('FilmstripCtrl', [
   FilmstripCtrl
 ]);
 
+var spotlight;
+
 function FilmstripCtrl ($scope, CloudFront) {
-  // $scope.slidesArr = [];
 
   CloudFront.get('filmstrip/')
   .then(function (keys) {
-    var children = [];
+    var images = [];
     var loaded = 0;
-    slidesArr = [];
 
     keys.forEach(function (k) {
       var img = document.createElement('img');
@@ -35,102 +35,91 @@ function FilmstripCtrl ($scope, CloudFront) {
         // If this is the last image to load
         // start the rendering logic
         if (loaded == keys.length) {
-          getSlides(children);
-          fillViewer(firstSlide);
+          setFillerWidth(images);
 
-          $scope.$apply();
+          // Inject the images into the #filmStrip div
+          images.forEach(function (image) {
+            $('#filmStrip').append(resizeImage(image));
+          });
+
+          // Calculate an index that is about in the middle of the children array.
+          // This index never changes because we are moving the first and last children
+          // around respectively, and gives us some room to do that out of the user's
+          // sight.
+          spotlight = Math.round($('#filmStrip').children().length / 2);
+
+          centerSpotlight();
+
+          // $scope.$apply();
         }
       };
-      children.push(img);
+
+      images.push(img);
     });
+
   })
   .catch(function (err) {
     console.error('Failed to get filmstrip media from CloudFront: ', err);
   });
 }
 
-var slidesArr = [];
-var viewerX;
-var firstSlide = 0;
+function resizeImage (image) {
+  var ratio = image.width / image.height;
 
-function resizeImg(x){
-    var image = x;
-    var ogHeight = image.height;
-    var ogWidth = image.width;
-    var ratio = ogWidth / ogHeight;
-    var newHeight = 250;
-    var newWidth = newHeight * ratio;
-    image.height = newHeight;
-    image.width = newWidth;
+  image.height = 250;
+  image.width = Math.round(250 * ratio);
+
+  return image;
 }
 
-function getSlides(children) {
+// This replaces the need to set the #filmStrip width in css
+function setFillerWidth (images) {
+  var total = 0;
 
-  // Only difference here you don't need to search the DOM for your imgs, we
-  // are pulling them from AWS CloudFront now, and passing you the same kind
-  // of data structure that you had before.
-  var slidesChild = children;
-  for (var i = 0; i <= slidesChild.length - 1; i++) {
-      resizeImg(slidesChild[i]);
-      slidesArr.push(slidesChild[i]);
+  // images.each(function (index, image) {
+  //   total += image.width;
+  // });
+  images.forEach(function (image) {
+    total += image.width;
+  });
+
+  $('#filmStrip').width(total);
+}
+
+function slide (direction) {
+  // With jQuery, when you prepend() or append() a child,
+  // if the child is already one of the parent's children,
+  // then jQuery doesn't create another child, it simply
+  // moves it.
+
+  if (direction < 0) {
+    var lastImage = $('#filmStrip').children().last();
+    $('#filmStrip').prepend(lastImage);
   }
+  else {
+    var firstImage = $('#filmStrip').children().first();
+    $('#filmStrip').append(firstImage);
+  }
+
+  centerSpotlight();
 }
 
-function measure() {
-    var viewer = document.getElementById('indexCarousel');
-    viewerX = viewer.offsetWidth;
-}
+// centerSpotlight() basically calculates what to set the marginLeft
+// property of the #filmStrip div, so that the spotlight image is centered.
+function centerSpotlight () {
+  var widthSum = 0;
 
-function wrap(x) {
-    var x = x;
-    if (x > slidesArr.length-1) {
-        firstSlide = x % slidesArr.length;
+  var children = $('#filmStrip').children().slice(0, spotlight + 1);
+
+  children.each(function (index, child) {
+    if (index == spotlight) {
+      return widthSum += Math.round(child.width / 2);
     }
-    else if (x < 0){
-        firstSlide = slidesArr.length - Math.abs(x);
-    }
-    else firstSlide = x;
-}
 
-function fillViewer(x) {
-    var filmStrip = document.getElementById('filmStrip');
-    wrap(x);
-    var index = firstSlide;
-    var filmArr = [];
-    var filmLength = 0;
-    measure();
-    for (index; index <= slidesArr.length - 1; index++) {
-        if (filmLength < viewerX) {
-            filmArr.push(slidesArr[index]);
-            filmLength += slidesArr[index].width;
-            if (index == slidesArr.length - 1) {
-                index = -1;
-            }
-        } else break;
-    }
-    filmStrip.setAttribute('style', 'width:' + filmLength + 'px');
-    for (var i = 0; i <= filmArr.length - 1; i++) {
-        filmStrip.appendChild(filmArr[i]);
-    }
-}
+    widthSum += child.width;
+  });
 
-function clearViewer() {
-    var filmStrip = document.getElementById('filmStrip');
-    while(filmStrip.firstChild) {
-        filmStrip.removeChild(filmStrip.firstChild);
-    }
-}
+  var adjustment = widthSum - Math.round($('#viewer').width() / 2);
 
-function slideLeft() {
-    // stop interval
-    clearViewer();
-    firstSlide -= 1;
-    fillViewer(firstSlide);
-}
-
-function slideRight() {
-    // stop interval
-    clearViewer();
-    firstSlide += 1;
-    fillViewer(firstSlide);
+  $('#filmStrip').animate({'marginLeft': '-' + adjustment});
 }

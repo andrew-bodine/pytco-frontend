@@ -1,12 +1,12 @@
 <div id="homePage">
-  
+
   <!-- carousel -->
   <div id="indexCarousel" class="col-md-12" ng-cloak>
-    <div class="viewer row">
-      <button onclick="slideLeft()" class="controls left-control"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+    <div id="viewer" class="viewer row">
+      <button onclick="slide(-1)" class="controls left-control"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
       <div id="filmStrip">
       </div>
-      <button onclick="slideRight()" class="controls right-control"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+      <button onclick="slide(1)" class="controls right-control"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
     </div>
   </div>
 
@@ -15,11 +15,11 @@
     <div class="row">
       <h2 class="section-header col-md-6">Featured</h2>
   <!-- Controls -->
-      <p class="col-md-6 featured-directions"> 
-        <span class="carousel-control" href="#featured-carousel" role="button" data-slide="prev">last</span> | 
+      <p class="col-md-6 featured-directions">
+        <span class="carousel-control" href="#featured-carousel" role="button" data-slide="prev">last</span> |
         <span class="carousel-control" href="#featured-carousel" role="button" data-slide="next">next</span>
       </p>
-  
+
     </div>
     <span ng-include="'home/featuredEvent.html'"></span>
   </div>
