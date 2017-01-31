@@ -14,6 +14,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-replace": "^1.0.1",
     "grunt-sails-linker": "^1.0.4",
     "grunt-shell": "^2.1.0",
     "http-server": "^0.9.0",

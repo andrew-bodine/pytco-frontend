@@ -6,3 +6,4 @@ bower_components/
 
 # AWS Credentials
 credentials.json
+credentials.staging.json

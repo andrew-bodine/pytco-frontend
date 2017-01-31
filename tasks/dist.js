@@ -4,6 +4,7 @@ module.exports = function (grunt) {
     'sass:dist',
     'cssmin:dist',
     'concat:dist',
+    'replace:dist',
     'uglify:dist',
     'copy:dist',
     'sails-linker:distCss',

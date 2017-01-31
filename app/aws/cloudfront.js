@@ -9,9 +9,8 @@ module.service('CloudFront', [
 
 function CloudFront ($http) {
 
-  // TODO: Make this easily configurable
-  var baseUrl = 'https://dmzlbjh85nwo5.cloudfront.net';
-  this.baseUrl = baseUrl;
+  // This gets replaced during build time by our grunt-replace task.
+  this.baseUrl = "CLOUDFRONT_URL";
 
   var distribution = [];
 
