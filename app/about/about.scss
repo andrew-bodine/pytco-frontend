@@ -1,9 +1,8 @@
 .mission {
 	text-align: center;
 	background-color: $logo-orange;
-	h3{
-		font-family: $header-font;
-		color: $orange-accent;
+	.section-header{
+		color: whitesmoke;
 	}
 	p{
 		font-family: $header-font;
@@ -19,6 +18,7 @@
 }
 .about-mission{
 	h3{
+		font-family: $header-font;
 		color: $orange-accent;
 	}
 	margin-bottom: 2%;

@@ -9,3 +9,31 @@ module.config(['$routeProvider', function ($routeProvider) {
     templateUrl: 'contact/contact.html'
   })
 }]);
+
+module.controller('ContactCtrl', [
+  ContactCtrl
+]);
+
+var map;
+
+function ContactCtrl() {
+	initMap();
+}
+
+function initMap() {
+
+	var uluru = {lat: 42.668558, lng: -77.051929};
+	var map = new google.maps.Map(document.getElementById('map'), {
+	  zoom: 14,
+	  center: uluru
+	});
+	var marker = new google.maps.Marker({
+	  position: uluru,
+	  map: map
+	});
+
+	var infoWindow = new google.maps.InfoWindow({
+                content: "130 E Elm St. <br>Penn Yan, NY <br>14527"
+            });
+	infoWindow.open(map, marker);
+}

@@ -6,6 +6,9 @@
 	.glyph {
 		font-size: 2em;
 	}
+	#map{
+		height: 300px;
+	}
 	.contact-info-row{
 		margin: 3em 0;
 		.info-block {
@@ -22,10 +25,5 @@
 				color: $logo-pink;
 			}
 		}
-	}
-	.map {
-		display: block;
-		margin: 0 auto;
-		padding: 0;
 	}
 }

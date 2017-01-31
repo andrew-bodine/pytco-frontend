@@ -1,7 +1,12 @@
+.left-nav{
+	position: relative;
+}
 .staticLeft{
+	position: fixed;
 	text-align: center;
 	.logo {
 		margin-bottom: 50px;
+		max-width: 280px;
 	}
 	.nav {
 		margin-bottom: 100px;
