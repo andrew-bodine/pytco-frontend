@@ -68,7 +68,7 @@ function FilmstripCtrl ($scope, CloudFront) {
 
     setTimeout(function () {
       loopFilmstrip();
-    }, 3000);
+    }, 4000);
   }
 }
 
