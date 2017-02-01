@@ -4,19 +4,19 @@
 		<h1>Gallery</h1>
 	</div>
 
-	<div class="row">
+	<!-- <div class="row"> -->
 
     <!-- AngularJS Loop on albums -->
 		<div class="col-xs-6 col-sm-6 col-md-3 album" ng-repeat="album in albums track by $index" ng-cloak ng-click="viewAlbum($index)">
-			<a href="" data-toggle="modal" data-target="#myModal">
+			<span href="" data-toggle="modal" data-target="#myModal">
 				<div class="thumbnail">
 					<img ng-src="{{album.thumbnail.src}}">
 					<div class="caption">
 						<h5>{{album.name}}</h5>
 					</div>
 				</div>
-			</a>
+			</span>
 		</div>
 
-	</div>
+	<!-- </div> -->
 </div>

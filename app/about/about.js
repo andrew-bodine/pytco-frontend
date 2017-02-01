@@ -17,6 +17,10 @@ module.controller('AboutCtrl', [
   AboutCtrl
 ]);
 
+function stripExtension (name) {
+  return name.split('.')[0];
+}
+
 function AboutCtrl ($scope, CloudFront) {
   $scope.members = [];
   $scope.officers = [];
@@ -30,13 +34,13 @@ function AboutCtrl ($scope, CloudFront) {
       if (parts[0] === 'officers') {
         $scope.officers.push({
           position: parts[1],
-          name: parts[2],
+          name: stripExtension(parts[2]),
           src: url.href
         })
       }
       else {
         $scope.members.push({
-          name: parts[0],
+          name: stripExtension(parts[0]),
           src: url.href
         });
       }

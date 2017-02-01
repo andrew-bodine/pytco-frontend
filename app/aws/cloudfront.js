@@ -9,8 +9,9 @@ module.service('CloudFront', [
 
 function CloudFront ($http) {
 
-  // This gets replaced during build time by our grunt-replace task.
-  this.baseUrl = "CLOUDFRONT_URL";
+  // This gets replaced at build time by our grunt-replace task.
+  var baseUrl = "CLOUDFRONT_URL";
+  this.baseUrl = baseUrl;
 
   var distribution = [];
 

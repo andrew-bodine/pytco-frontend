@@ -13,8 +13,9 @@
 	.sampson-description {
 		.section-header{
 			margin-top: 0;
+			// padding-top: 1.5em;
 		}
-		padding: 0 2em;
+		padding: 1em 2em;
 		text-align: left;
 		border-bottom: 5px solid $logo-green;
 	}
@@ -34,7 +35,7 @@
 	.reno {
 		background-color: $logo-green;
 		overflow: auto;
-		padding: 0;
+		padding: 1em;
 		text-align: left;
 		.phaseone {
 			text-align: center;

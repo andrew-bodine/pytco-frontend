@@ -55,7 +55,9 @@ function GalleryCtrl ($scope, CloudFront) {
       var parts = k.split('/').slice(1);
 
       if (albumIndex.indexOf(parts[0]) <= -1) {
-        var name = parts[0].split('.')[0];
+        var indexOfLastDot = parts[0].lastIndexOf('.');
+        var name = parts[0].slice(0, indexOfLastDot);
+        // var name = parts[0].split('.')[0];
         var url = new URL(k, CloudFront.baseUrl);
 
         albumIndex.push(name);

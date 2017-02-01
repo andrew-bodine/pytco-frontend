@@ -57,10 +57,19 @@ function FilmstripCtrl ($scope, CloudFront) {
       images.push(img);
     });
 
+    loopFilmstrip();
   })
   .catch(function (err) {
     console.error('Failed to get filmstrip media from CloudFront: ', err);
   });
+
+  function loopFilmstrip () {
+    slide(1);
+
+    setTimeout(function () {
+      loopFilmstrip();
+    }, 3000);
+  }
 }
 
 function resizeImage (image) {
@@ -121,5 +130,5 @@ function centerSpotlight () {
 
   var adjustment = widthSum - Math.round($('#viewer').width() / 2);
 
-  $('#filmStrip').animate({'marginLeft': '-' + adjustment});
+  $('#filmStrip').animate({'marginLeft': '-' + adjustment}, 0);
 }

@@ -3,12 +3,15 @@
 	.page-title{
 		margin-bottom: 2em;
 	}
+	.album {
+		max-height: 200px;
+	}
 	img{
 		/*
 			TODO: Don't set height here so we avoid squishing
 						improperly sized thumbnails
 		*/
-		height: 130px;
+		// height: 130px;
 		box-shadow: 5px 5px 5px #aaa;
 	}
 	input{
