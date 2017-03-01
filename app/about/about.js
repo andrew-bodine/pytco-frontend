@@ -27,24 +27,25 @@ function AboutCtrl ($scope, CloudFront) {
 
   CloudFront.get('staff/500x500/')
   .then(function (keys) {
-    keys.forEach(function (k) {
-      var parts = k.split('/').slice(2);
-      var url = new URL(k, CloudFront.baseUrl);
+
+    for (var i = 0; i < keys.length; i++) {
+      var parts = keys[i].split('/').slice(2);
+      var url = encodeURI(CloudFront.baseUrl + '/' + keys[i]);
 
       if (parts[0] === 'officers') {
         $scope.officers.push({
           position: parts[1],
           name: stripExtension(parts[2]),
-          src: url.href
+          src: url
         })
       }
       else {
         $scope.members.push({
           name: stripExtension(parts[0]),
-          src: url.href
+          src: url
         });
       }
-    });
+    }
 
     $scope.$apply();
   })

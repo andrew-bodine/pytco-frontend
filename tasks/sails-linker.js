@@ -8,6 +8,7 @@ var bundles = {
       '.build/dev/bower_components/jquery/dist/jquery.js',
       '.build/dev/bower_components/angular/angular.js',
       '.build/dev/bower_components/angular-route/angular-route.js',
+      '.build/dev/bower_components/bluebird/js/browser/bluebird.min.js',
       '.build/dev/bower_components/bootstrap/dist/js/bootstrap.js',
       '.build/dev/app.js'
     ]
@@ -22,6 +23,7 @@ var bundles = {
       '.build/dist/bower_components/jquery/dist/jquery.min.js',
       '.build/dist/bower_components/angular/angular.min.js',
       '.build/dist/bower_components/angular-route/angular-route.min.js',
+      '.build/dist/bower_components/bluebird/js/browser/bluebird.min.js',
       '.build/dist/bower_components/bootstrap/dist/js/bootstrap.min.js',
       '.build/dist/app.min.js'
     ]

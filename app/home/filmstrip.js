@@ -26,9 +26,11 @@ function FilmstripCtrl ($scope, CloudFront) {
     var images = [];
     var loaded = 0;
 
-    keys.forEach(function (k) {
-      var img = document.createElement('img');
-      img.src = new URL(k, CloudFront.baseUrl);
+    for (var i = 0; i < keys.length; i++) {
+      var img = new Image();
+
+      img.src = encodeURI(CloudFront.baseUrl + '/' + keys[i]);
+
       img.onload = function () {
         loaded = loaded + 1;
 
@@ -38,9 +40,9 @@ function FilmstripCtrl ($scope, CloudFront) {
           setFillerWidth(images);
 
           // Inject the images into the #filmStrip div
-          images.forEach(function (image) {
-            $('#filmStrip').append(resizeImage(image));
-          });
+          for (var j = 0; j < images.length; j++) {
+            $('#filmStrip').append(resizeImage(images[j]));
+          }
 
           // Calculate an index that is about in the middle of the children array.
           // This index never changes because we are moving the first and last children
@@ -55,7 +57,7 @@ function FilmstripCtrl ($scope, CloudFront) {
       };
 
       images.push(img);
-    });
+    }
 
     loopFilmstrip();
   })
@@ -85,12 +87,9 @@ function resizeImage (image) {
 function setFillerWidth (images) {
   var total = 0;
 
-  // images.each(function (index, image) {
-  //   total += image.width;
-  // });
-  images.forEach(function (image) {
-    total += image.width;
-  });
+  for (var i = 0; i < images.length; i++) {
+    total += images[i].width;
+  }
 
   $('#filmStrip').width(total);
 }
@@ -120,13 +119,13 @@ function centerSpotlight () {
 
   var children = $('#filmStrip').children().slice(0, spotlight + 1);
 
-  children.each(function (index, child) {
-    if (index == spotlight) {
-      return widthSum += Math.round(child.width / 2);
+  for (var i = 0; i < children.length; i++) {
+    if (i == spotlight) {
+      return widthSum += Math.round(children[i].width / 2);
     }
 
-    widthSum += child.width;
-  });
+    widthSum += children[i].width;
+  }
 
   var adjustment = widthSum - Math.round($('#viewer').width() / 2);
 

@@ -31,7 +31,8 @@ function CloudFront ($http) {
           // TODO: handle d.isTruncated = true
 
           for (var c = 0; c < contents.length; c++) {
-            var k = contents[c].getElementsByTagName('Key')[0].innerHTML;
+            var content = contents[c].getElementsByTagName('Key');
+            var k = content[0].childNodes[0].nodeValue;
 
             // Don't index directory keys
             if (k.slice(-1) === "/") continue;

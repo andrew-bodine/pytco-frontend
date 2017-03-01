@@ -31,11 +31,11 @@ function GalleryCtrl ($scope, CloudFront) {
 
     CloudFront.get('gallery/' + $scope.albums[index].name + '/')
     .then(function (keys) {
-      keys.forEach(function (k) {
-        var url = new URL(k, CloudFront.baseUrl);
+      for (var i = 0; i < keys.length; i++) {
+        var url = encodeURI(CloudFront.baseUrl + '/' + keys[i]);
 
-        $scope.albums[index].images.push({src: url.href});
-      });
+        $scope.albums[index].images.push({src: url});
+      }
 
       $scope.$apply();
     })
@@ -51,24 +51,23 @@ function GalleryCtrl ($scope, CloudFront) {
   CloudFront.get('gallery-thumbnails/')
   .then(function (keys) {
 
-    keys.forEach(function (k) {
-      var parts = k.split('/').slice(1);
+    for (var i = 0; i < keys.length; i++) {
+      var parts = keys[i].split('/').slice(1);
 
       if (albumIndex.indexOf(parts[0]) <= -1) {
         var indexOfLastDot = parts[0].lastIndexOf('.');
         var name = parts[0].slice(0, indexOfLastDot);
-        // var name = parts[0].split('.')[0];
-        var url = new URL(k, CloudFront.baseUrl);
+        var url = encodeURI(CloudFront.baseUrl + '/' + keys[i]);
 
         albumIndex.push(name);
 
         $scope.albums.push({
           name: name,
-          thumbnail: {src: url.href},
+          thumbnail: {src: url},
           images: []
         });
       }
-    });
+    }
 
     $scope.$apply();
   })
