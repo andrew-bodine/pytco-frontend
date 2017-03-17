@@ -33,7 +33,7 @@ module.exports = function (grunt) {
     }
   });
 
-  var url = new URL(credentials.cloudfront.url);
+  var url = URL.parse(credentials.cloudfront.url);
   var distributionId = url.hostname.split('.')[0];
 
   grunt.config.set('cloudfront', {
