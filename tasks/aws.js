@@ -1,3 +1,5 @@
+var URL = require('url');
+
 module.exports = function (grunt) {
   var credentials = grunt.file.readJSON('credentials.json');
 
@@ -28,6 +30,22 @@ module.exports = function (grunt) {
     fonts: {
       cwd: '.build/dist',
       src: '**/*.{ttf,woff,woff2}'
+    }
+  });
+
+  var url = new URL(credentials.cloudfront.url);
+  var distributionId = url.hostname.split('.')[0];
+
+  grunt.config.set('cloudfront', {
+    options: {
+      accessKeyId: credentials.accessKeyId,
+      secretAccessKey: credentials.secretAccessKey,
+      distributionId: distributionId
+    },
+    html: {
+      options: {
+        defaultRootObject: 'index.html'
+      }
     }
   });
 
