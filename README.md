@@ -1,4 +1,6 @@
 # pytco-frontend
+[![Build Status](https://travis-ci.com/andrew-bodine/pytco-frontend.svg?token=5BWXz1piH3SKhjk2JXW7&branch=master)](https://travis-ci.com/andrew-bodine/pytco-frontend)
+
 PYTCo web application based on AngularJS framework.
 
 ## Contribute
