@@ -3,10 +3,15 @@ sudo: required
 language: node_js
 
 node_js:
-- node
+  - node
 
 services:
   - docker
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y jq
+  - jq ".accessKeyId |= \"$AWS_ID\" | .secretAccessKey |= \"$AWS_SECRET\" | .s3.bucket |= \"$S3_BUCKET\" | .cloudfront.url |= \"$CLOUDFRONT_URL\"" credentials.tmpl.json > credentials.json
 
 script:
   - grunt deploy
