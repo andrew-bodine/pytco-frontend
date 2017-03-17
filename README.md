@@ -2,6 +2,24 @@
 PYTCo web application based on AngularJS framework.
 
 ## Contribute
+
+You need Docker installed: [https://docs.docker.com/engine/installation](https://docs.docker.com/engine/installation)
+
+This command should succeed before proceeding:
+```
+$ docker info
+```
+
+If it fails, and you are on using Docker Toolbox, (i.e. Windows) you need to init your cmd line shell environment
+so it knows how to talk to Docker running in a virtual machine likely on VirtualBox:
+```
+$ docker-machine env default
+
+# Copy the command at the end of that output and run it
+```
+
+Now your `$ docker info` should work.
+
 To get a development environment up and running, first you need to install the 
 Node.js dependencies we use to manage the project:
 ```
