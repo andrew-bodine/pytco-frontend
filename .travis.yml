@@ -15,7 +15,7 @@ services:
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get -qq install -y jq
-  - jq ".accessKeyId |= \"$AWS_ID\" | .secretAccessKey |= \"$AWS_SECRET\" | .s3.bucket |= \"$S3_BUCKET\" | .cloudfront.url |= \"$CLOUDFRONT_URL\"" credentials.tmpl.json > credentials.json
+  - jq ".accessKeyId |= \"$AWS_ID\" | .secretAccessKey |= \"$AWS_SECRET\" | .s3.bucket |= \"$S3_BUCKET\" | .cloudfront.id |= \"$CLOUDFRONT_ID\" | .cloudfront.url |= \"$CLOUDFRONT_URL\"" credentials.tmpl.json > credentials.json
   - ls -l credentials.json
 
 script:

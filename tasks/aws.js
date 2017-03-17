@@ -1,5 +1,3 @@
-var URL = require('url');
-
 module.exports = function (grunt) {
   var credentials = grunt.file.readJSON('credentials.json');
 
@@ -33,14 +31,11 @@ module.exports = function (grunt) {
     }
   });
 
-  var url = URL.parse(credentials.cloudfront.url);
-  var distributionId = url.hostname.split('.')[0];
-
   grunt.config.set('cloudfront', {
     options: {
       accessKeyId: credentials.accessKeyId,
       secretAccessKey: credentials.secretAccessKey,
-      distributionId: distributionId
+      distributionId: credentials.cloudfront.id
     },
     html: {
       options: {

@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     },
 
     release: {
-      command: 'docker exec pytco-frontend grunt s3'
+      command: 'docker exec pytco-frontend grunt s3; docker exec pytco-frontend grunt cloudfront'
     }
   });
 
