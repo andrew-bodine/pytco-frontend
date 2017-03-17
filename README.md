@@ -13,6 +13,7 @@ $ docker info
 If it fails, and you are on using Docker Toolbox, (i.e. Windows) you need to init your cmd line shell environment
 so it knows how to talk to Docker running in a virtual machine likely on VirtualBox:
 ```
+$ docker-machine start default
 $ docker-machine env default
 
 # Copy the command at the end of that output and run it
