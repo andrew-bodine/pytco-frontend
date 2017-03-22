@@ -5,7 +5,7 @@
 		a {
 			text-decoration: none;
 			h2:hover {
-				color: $title-gray;
+				color: #dddddd;
 			}
 		}
 	}
@@ -54,6 +54,7 @@
 		background-color: $logo-blue;
 		background-size: cover;
 		background-repeat: no-repeat;
+		background-blend-mode: overlay;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -71,7 +72,7 @@
 			width: 100%;
 			margin-top: 10%;
 			border: 3px solid #ffffff;
-			box-shadow: 2px 2px 2px #000000;
+			/*box-shadow: 2px 2px 2px #000000;*/
 		}
 		button{
 			color: #ffffff;
