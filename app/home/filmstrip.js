@@ -121,10 +121,9 @@ function centerSpotlight () {
 
   for (var i = 0; i < children.length; i++) {
     if (i == spotlight) {
-      return widthSum += Math.round(children[i].width / 2);
+      widthSum += Math.round(children[i].width / 2);
     }
-
-    widthSum += children[i].width;
+    else widthSum += children[i].width;
   }
 
   var adjustment = widthSum - Math.round($('#viewer').width() / 2);
