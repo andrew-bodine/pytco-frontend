@@ -12,7 +12,7 @@ var module = angular.module('pytco', [
 ]);
 
 module.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-  // $locationProvider.hashPrefix(['!']);
+  // $locationProvider.hashPrefix(['/']);
 
   $routeProvider.otherwise({redirectTo: '/'});
 }]);

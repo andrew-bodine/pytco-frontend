@@ -9,6 +9,13 @@
 			}
 		}
 	}
+	.index-carousel {
+		background-color: #000000;
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
 	.section-header {
 		color: #fff;
 	}
@@ -28,6 +35,9 @@
 			width: auto;
 			display: block;
 			margin: 0 auto;
+			border: 3px solid #ffffff;
+			/*border-radius: 5px 25px 5px 25px;*/
+
 		}
 		.event-date {
 			color: $title-gray;
@@ -42,9 +52,10 @@
 		}
 	}
 	.visit{
-		background-color: $logo-yellow;
-		background-size: cover;
+		/*background-color: $logo-yellow;*/
+		background-size: contain;
 		background-repeat: no-repeat;
+		background-position: center;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
@@ -61,7 +72,7 @@
 		justify-content: center;
 		button{
 			color: #ffffff;
-			background-color: $blue-accent;
+			background-color: $logo-blue;
 		}
 	}
 	.sampson{
@@ -72,6 +83,7 @@
 			width: 100%;
 			margin-top: 10%;
 			border: 3px solid #ffffff;
+			/*border-radius: 5px 50px 5px 50px;*/
 			/*box-shadow: 2px 2px 2px #000000;*/
 		}
 		button{
@@ -85,6 +97,7 @@
 	#indexCarousel{
 		background-color: #000;
 		height: 250px;
+		max-height: 300px;
 		overflow: hidden;
 		.controls {
 			position: absolute;

@@ -1,32 +1,103 @@
 #aboutPage{
-	.mission {
-		text-align: center;
-		background-color: $logo-orange;
-		.section-header{
-			color: whitesmoke;
-		}
-		p{
-			font-family: $header-font;
+	/* start clear bootstrap */
+	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-tabs > li > a:hover {
+		background-color: unset;
+		border: none;
+	}
+	.nav-tabs {
+		border-bottom: none;
+	}
+	/* end clear bootstrap*/
+	
+	.about-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		.header-text {
+			text-align: center;
 			color: #fff;
-			font-size: 1.5em;
-		}
-		.btn{
-			font-size: .8em;
-			margin: 2%;
-			background-color: transparent;
-			border: none;
-		}
-	}
-	.about-mission{
-		h3{
 			font-family: $header-font;
-			color: $orange-accent;
-			padding: 0 15px;
 		}
-		margin-bottom: 2%;
+
+		.tint-layer {
+			background: rgba(241,90,34, 0.5);
+		}
 	}
-	.about-pytco{
-		border-top: 5px solid $logo-blue;
+	
+	.nav {
+		text-align: center;
+		margin-bottom: 30px;
+		li, a {
+			color: #fff;
+		}
+		.history-nav {
+			background-color: $logo-blue;
+			:hover{
+				background-color: $logo-blue;
+			}
+		}
+		.history-nav:after {
+		    content:' ';
+		    position: absolute;
+		    top: 100%;
+		    left: 0;
+		    margin-left: 0;
+		    width: 100%;
+		    height: 0;
+		    border-top: solid 30px $logo-blue;
+		    border-left: solid 110px transparent;
+		    border-right: solid 110px transparent;
+		}
+				.mission-nav {
+			background-color: $logo-orange;
+		}
+		.board-nav {
+			background-color: $logo-pink;
+		}
+		.community-nav {
+			background-color: $logo-yellow;
+		}
+	}
+	
+	.mission {
+		h3 {
+			color: $logo-orange;
+		}
+		.statement {
+			font-family: $header-font;
+			color: $light-gray;
+			font-size: 2em;
+			padding: 3% 0;
+			.quote-style {
+				font-weight: bold;
+				color: $logo-orange;
+				font-size: 3em;
+				vertical-align: bottom;
+				text-align: end;
+			}
+		}
+		.about-mission{
+			.about-mission-title {
+				font-family: $header-font;
+				color: $light-gray;
+				border-bottom: 3px solid $logo-orange;
+				margin-bottom: 2%;
+				font-size: 1.25em;
+				font-weight: bold;
+			}
+			li {
+				margin: 0 0 1em 0;
+			}
+			margin-bottom: 2%;
+		}
+	}
+	
+	.about-history{
 		margin-bottom: 2%;
 		.section-header{
 			padding: 0 15px;
@@ -34,27 +105,41 @@
 		}
 	}
 	.board-members {
-		border-top: 5px solid $logo-pink;
 		text-align: center;
 		.section-header {
 			padding: 0 15px;
-			color: $pink-accent;
+			color: $logo-pink;
 			text-align: left;
 		}
 		img {
 			max-width: 60%;
-			border: 5px solid $logo-blue;
+			/*border: 5px solid black;*/
 		}
 		.officer {
 			.position {
 				font-weight: bold;
 			}
 			img {
-				border-top: 5px solid $logo-pink;
+/*				border-top: 5px solid $logo-pink;
 				border-left: 5px solid $logo-green;
 				border-right: 5px solid $logo-blue;
-				border-bottom: 5px solid $logo-orange;
+				border-bottom: 5px solid $logo-orange;*/
 			}
 		}
+	}
+
+	.about-community-event {
+		.com-evt {
+			margin-bottom: 2em;
+			.com-evt-title{
+					font-family: $header-font;
+					color: $title-gray;
+					border-bottom: 2px solid $logo-yellow;
+			}
+			.com-evt-blurb{
+
+			}
+		}
+
 	}
 }
