@@ -10,22 +10,15 @@
 	/* end clear bootstrap*/
 	
 	.about-header {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-
+		/*height: 250px;*/
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
 
 		.header-text {
 			text-align: center;
-			color: #fff;
+			fill: #ffffff;
 			font-family: $header-font;
-		}
-
-		.tint-layer {
-			background: rgba(241,90,34, 0.5);
 		}
 	}
 	
@@ -130,6 +123,9 @@
 
 	.about-community-event {
 		.com-evt {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
 			margin-bottom: 2em;
 			.com-evt-title{
 					font-family: $header-font;
