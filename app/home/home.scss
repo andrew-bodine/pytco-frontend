@@ -52,13 +52,9 @@
 		}
 	}
 	.visit{
-		/*background-color: $logo-yellow;*/
-		background-size: contain;
+		background-size: inherit;
 		background-repeat: no-repeat;
 		background-position: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
 	}
 	.season{
 		text-align: center;
