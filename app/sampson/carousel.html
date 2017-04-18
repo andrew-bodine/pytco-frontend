@@ -12,12 +12,13 @@
     -->
     <li
       data-target="#carousel-sampson"
-      data-slide-to="0"
+      data-slide-to="{{$index}}"
+      ng-repeat="img in images.slice(0, 1) track by $index"
       class="active"></li>
     <li
       data-target="#carousel-sampson"
       data-slide-to="{{$index + 1}}"
-      ng-repeat="img in images.slice(1) track by $index"</li>
+      ng-repeat="img in images.slice(1) track by $index"></li>
   </ol>
 
   <!-- Wrapper for slides -->
