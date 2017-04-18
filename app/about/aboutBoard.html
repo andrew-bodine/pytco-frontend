@@ -1,5 +1,6 @@
 <div class="row board-members">
 	<h3 class="section-header">Board Members</h3>
+	<!--
 	<div class="row">
 
 		<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 thumbnail officer" ng-repeat="officer in officers" ng-cloak>
@@ -11,12 +12,14 @@
 		</div>
 
 	</div>
+	-->
 	<div class="row">
 
-		<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 thumbnail" ng-repeat="member in members" ng-cloak>
+		<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 thumbnail member" ng-repeat="member in members" ng-cloak>
 			<img ng-src="{{member.src}}" alt="..." class="img-circle" >
 			<div class="caption">
-        <h5>{{member.name}}</h5>
+        		<h5>{{member.name}}</h5>
+				<h6 class="position" ng-repeat="pos in member.positions">{{pos}}</h6>
 			</div>
 		</div>
 
