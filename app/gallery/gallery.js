@@ -69,9 +69,92 @@ function GalleryCtrl ($scope, CloudFront) {
       }
     }
 
+    $scope.albums = $scope.albums.sort(sortAlbums);
+
     $scope.$apply();
   })
   .catch(function (err) {
     console.error('Failed to get gallery media from CloudFront: ', err);
   });
+}
+
+function sortAlbums(a, b) {
+    // We expect date labels to be in one of the following
+    // formats:
+    // Name - Month Year
+    // Name - Year
+    // Name
+
+    var aParts = a.name.split('-');
+    var bParts = b.name.split('-');
+
+    // If a doesn't have some sort of date labels, then b is
+    // always greater.
+    if (aParts.length <= 1) return -1;
+
+    // If b doesn't have some sort of date labels, then a is
+    // always greater.
+    if (bParts.length <= 1) return 1;
+
+    // Remove leading/trailing whitespace characters
+    aParts = aParts[1];
+    bParts = bParts[1];
+    aParts = aParts.replace(/^\s*/, '').replace(/\s*$/, '');
+    bParts = bParts.replace(/^\s*/, '').replace(/\s*$/, '');
+
+    var aLabels = aParts.split(' ');
+    var bLabels = bParts.split(' ');
+
+    var aYear = 0, bYear = aYear;
+    var aMonth = months[11], bMonth = aMonth;
+
+    if (aLabels.length > 1) {
+        aMonth = aLabels[0];
+        aYear = parseInt(aLabels[1]);
+    }
+    else {
+        aYear = aLabels[0];
+    }
+
+    if (bLabels.length > 1) {
+        bMonth = bLabels[0];
+        bYear = parseInt(bLabels[1]);
+    }
+    else {
+        bYear = bLabels[0];
+    }
+
+    if (aYear > bYear) return 1;
+    if (bYear > aYear) return -1;
+
+    // If we get here, then aYear is equal to bYear. We now
+    // have to compare months
+    return compareMonths(aMonth.toLowerCase(), bMonth.toLowerCase());
+}
+
+var months = [
+    'january',
+    'february',
+    'march',
+    'april',
+    'may',
+    'june',
+    'july',
+    'august',
+    'september',
+    'october',
+    'november',
+    'december'
+];
+
+function compareMonths(a, b) {
+    if (months.indexOf(a) < 0) return -1;
+
+    if (months.indexOf(b) < 0) return 1;
+
+    if (months.indexOf(a) < months.indexOf(b)) return 1;
+
+    if (months.indexOf(a) == months.indexOf(b)) return 0;
+
+    return -1;
 }
