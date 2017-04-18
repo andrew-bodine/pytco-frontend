@@ -1,0 +1,52 @@
+<div id="carousel-sampson" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <!--
+      Normally we would condense the next two li elements into one
+      element and adjust the Angular attributes accordingly. We have
+      to set an active class on one of the images first, then the we
+      loop ng-repeat on the rest of the images so we can manually set
+      the active class. Using ng-class doesn't work as intended
+      because Angular will continuously evalutate the expression and
+      step on Bootstrap's toes in managing the active classes.
+    -->
+    <li
+      data-target="#carousel-sampson"
+      data-slide-to="0"
+      class="active"></li>
+    <li
+      data-target="#carousel-sampson"
+      data-slide-to="{{$index + 1}}"
+      ng-repeat="img in images.slice(1) track by $index"</li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <!--
+      Same thing here, we have to do it this way to avoid unwanted
+      ng-class behavior from Angular.
+    -->
+    <div ng-repeat="img in images.slice(0, 1)" class="item active">
+      <img ng-src="{{img.src}}" ng-alt="{{img.alt}}"/>
+    </div>
+
+    <div ng-repeat="img in images.slice(1)" class="item">
+      <img ng-src="{{img.src}}" ng-alt="{{img.alt}}"/>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <!--
+    For some reason we had to create a slide() function on the SampsonCtrl
+    Angular definition to handle click events on the arrow controls for the
+    carousel. This function simply delegates to whatever Bootstrp has defined.
+  -->
+  <a class="left carousel-control" ng-click="slide('prev')">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" ng-click="slide('next')">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

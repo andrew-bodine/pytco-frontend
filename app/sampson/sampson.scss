@@ -1,4 +1,55 @@
 .about-sampson{
-	text-align: center;
+	/*text-align: center;*/
 	margin-bottom: 2%;
+
+	.sampson-header {
+		height: 400px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+
+		.sampson-header-text {
+			color: #ffffff;
+			font-family: $header-font;
+			font-size: .2em;
+		}
 	}
+	.phase1 {
+		display: flex;
+		text-align: center;
+		.section-header{
+			color: $light-gray;
+		}
+		.phase1-desc{
+			text-align: left;
+		}
+		.goal {
+			background-color: $logo-green;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			color: #ffffff;
+			font-size: 2em;
+			font-family: sans-serif;
+		}
+	}
+	.step1 {
+		.section-header {
+			color: $light-gray;
+			border-bottom: 2px solid $logo-green;
+		}
+		.step1-desc {
+			padding: 0 3em;
+		}
+	}
+	.inside-sampson {
+		text-align: center;
+	}
+	.bero {
+		background-color: $logo-green;
+		color: #ffffff;
+		text-align: center;
+	}
+
+
+}
