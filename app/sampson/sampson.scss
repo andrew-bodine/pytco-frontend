@@ -3,11 +3,17 @@
 	margin-bottom: 2%;
 
 	.sampson-header {
-		height: 400px;
+		height: 450px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
 
+		.section-header {
+			color: #ffffff;
+			font-size: .3em;
+			text-align: center;
+			margin: 1em 0;
+		}
 		.sampson-header-text {
 			color: #ffffff;
 			font-family: $header-font;
@@ -59,15 +65,32 @@
 			padding: 0 3em;
 		}
 	}
+	.carousel-control.left, .carousel-control.right {
+		background-color: unset;
+		background-image: none;
+		color: black;
+	}
 	.inside-sampson {
 		margin-bottom: 1em;
 		text-align: center;
+		.carousel-indicators {
+			li {
+				background-color: gray;
+			}
+			.active {
+				background-color: $logo-green;
+			}
+		}
+		img {
+		    display: block;
+		    margin: 0 auto;
+		    border: 5px solid black;
+		    margin-bottom: 3.5em;
+		}
 	}
 	.bero {
 		background-color: $logo-green;
 		color: #ffffff;
 		text-align: center;
 	}
-
-
 }
