@@ -5,21 +5,15 @@
 
 	<!-- header -->
 	<div class="row about-header" ng-style="{'background-image':'url({{cloudfront}}/about/banner.jpg)'}">
-		<svg class="col-xs-12 col-sm-7 col-sm-offset-5 col-md-7 col-md-offset-5" id="trapezoid" viewbox="0 0 100 100" preserveAspectRatio="none" width="20%">
+		<svg class="col-xs-12 col-sm-7 col-sm-offset-5 col-md-7 col-md-offset-5" id="trapezoid" viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" style="padding: 0">
 			<path d="M20,0
-	           L300,0
+	           L100,0
 	           L100,100
-	           L0,100" fill="#f15a22" fill-opacity="0.6">
+	           L0,100" fill="#f15a22" fill-opacity="0.5">
 			</path>
-			<foreignObject x="20" y="0" width="70" height="5">
-				<!-- <p>Community Theatre at play in the Finger Lakes</p> -->
+			<foreignObject x="20" y="20" width="70" height="60">
+				<p class="about-header-text">Community Theatre at play in the Finger Lakes</p>
 			</foreignObject>
-<!-- 			<text x=20 y="0" dy="0" class="header-text">
-		        <tspan x="0" dy=".6em">Community Theatre</tspan>
-		        <tspan x="0" dy="1.2em">at play in the</tspan>
-		        <tspan x="0" dy="1.2em">Finger Lakes</tspan>
-		    </text> -->
-
 		</svg>
 
 	</div>
@@ -28,10 +22,37 @@
 	<!-- tab menu -->
 	<div class="row">
 		<ul class="nav nav-tabs" role="tablist">
-			<li class="active history-nav col-md-3"><a href="#history" role="tab" data-toggle="tab" target="_self">History</a></li>
-			<li class="mission-nav col-md-3"><a href="#mission" role="tab" data-toggle="tab" target="_self">Mission</a></li>
-			<li class="board-nav col-md-3"><a href="#board" role="tab" data-toggle="tab" target="_self">Board Members</a></li>
-			<li class="community-nav col-md-3"><a href="#community" role="tab" data-toggle="tab" target="_self">Community Events</a></li>
+			<li class="active history-nav col-md-3"><a href="#history" role="tab" data-toggle="tab" target="_self">History</a>
+				<div class="tab-div">
+					<svg viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" width="100%" style="padding: 0" class="tab-arrow">
+						<polygon class="history-arrow" points="0 0, 100 0, 50 100" />
+					</svg>
+				</div>
+			</li>
+
+			<li class="mission-nav col-md-3"><a href="#mission" role="tab" data-toggle="tab" target="_self">Mission</a>
+				<div class="tab-div">
+					<svg viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" width="100%" style="padding: 0" class="tab-arrow">
+						<polygon class="mission-arrow" points="0 0, 100 0, 50 100" />
+					</svg>
+				</div>
+			</li>
+
+			<li class="board-nav col-md-3"><a href="#board" role="tab" data-toggle="tab" target="_self">Board Members</a>
+				<div class="tab-div">
+					<svg viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" width="100%" style="padding: 0" class="tab-arrow">
+						<polygon class="board-arrow" points="0 0, 100 0, 50 100" />
+					</svg>
+				</div>
+			</li>
+			
+			<li class="community-nav col-md-3"><a href="#community" role="tab" data-toggle="tab" target="_self">Community Events</a>
+				<div class="tab-div">
+					<svg viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" width="100%" style="padding: 0" class="tab-arrow">
+						<polygon class="community-arrow" points="0 0, 100 0, 50 100" />
+					</svg>
+				</div>
+			</li>
 		</ul>
 	</div>
 
