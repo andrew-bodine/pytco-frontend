@@ -20,6 +20,8 @@ module.controller('FilmstripCtrl', [
 function FilmstripCtrl ($scope, CloudFront) {
   $scope.images = [];
 
+  // TODO (andrew-bodine): Remove the need for this.
+  //
   // slide() is a workaround for weird behavior with ng-class in
   // the home carousel template. Here we simply call the .carousel()
   // method that is provided by Bootstrap libs.
@@ -30,6 +32,24 @@ function FilmstripCtrl ($scope, CloudFront) {
 
     $('#carousel-filmstrip').carousel(action);
   };
+
+  var scrollTimeout = 5000;
+
+  // TODO (andrew-bodine): Remove the need for this.
+  //
+  // Set a repeating timer that will slide the carousel automatically. Again
+  // this shouldn't be necessary as the default implementation of the
+  // Bootstrap carousel auto scrolls.
+  function scrollTimer() {
+      $('#carousel-filmstrip').carousel('next');
+
+      setTimeout(scrollTimer, scrollTimeout);
+  }
+
+  // TODO (andrew-bodine): Remove the need for this.
+  //
+  // Kickoff the initial timer, which initiates the chain.
+  setTimeout(scrollTimer, scrollTimeout);
 
   // Fetch the images under the filmstrip directory in S3 storage, and build
   // up an array of images that will drive how Angular renders the filmstrip
