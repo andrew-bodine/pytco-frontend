@@ -17,8 +17,18 @@ module.controller('AboutCtrl', [
   AboutCtrl
 ]);
 
+// TODO (andrew-bodine): move this to the CloudFront service.
+//
+// stripExtension takes a chunk of a key returned from the CloudFront
+// service, and returns that chunk with any extension removed.
 function stripExtension (name) {
-  return name.split('.')[0];
+  var i = name.lastIndexOf('.');
+
+  // In this case, name doesn't contain an extension format
+  // that we recognize.
+  if (i == -1) return name;
+
+  return name.slice(0, i);
 }
 
 function AboutCtrl ($scope, CloudFront) {
