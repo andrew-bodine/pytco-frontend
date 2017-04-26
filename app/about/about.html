@@ -20,37 +20,85 @@
 
 	<!-- tab menu -->
 	<div class="row">
-		<ul class="nav nav-tabs" role="tablist">
-			<li class="active history-nav col-md-3"><a href="#history" role="tab" data-toggle="tab" target="_self">History</a>
-				<div class="tab-div">
-					<svg viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" width="100%" style="padding: 0" class="tab-arrow">
-						<polygon class="history-arrow" points="0 0, 100 0, 50 100" />
-					</svg>
-				</div>
+		<ul class="nav nav-tabs hidden-xs" role="tablist">
+			
+			<li class="active col-xs-12 col-sm-3 col-md-3">
+				<a href="#history" role="tab" data-toggle="tab" target="_self">
+					<p class="link-name history-nav">History</p>
+					<div class="tab-div">
+						<svg viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" width="100%" style="padding: 0" class="tab-arrow">
+							<polygon class="history-arrow" points="0 0, 100 0, 50 100" />
+						</svg>
+					</div>
+				</a>
 			</li>
 
-			<li class="mission-nav col-md-3"><a href="#mission" role="tab" data-toggle="tab" target="_self">Mission</a>
-				<div class="tab-div">
-					<svg viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" width="100%" style="padding: 0" class="tab-arrow">
-						<polygon class="mission-arrow" points="0 0, 100 0, 50 100" />
-					</svg>
-				</div>
+			<li class="col-xs-12 col-sm-3 col-md-3">
+				<a href="#mission" role="tab" data-toggle="tab" target="_self">
+					<p class="link-name mission-nav">Mission</p>
+					<div class="tab-div">
+						<svg viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" width="100%" style="padding: 0" class="tab-arrow">
+							<polygon class="mission-arrow" points="0 0, 100 0, 50 100" />
+						</svg>
+					</div>
+				</a>
 			</li>
 
-			<li class="board-nav col-md-3"><a href="#board" role="tab" data-toggle="tab" target="_self">Board Members</a>
-				<div class="tab-div">
-					<svg viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" width="100%" style="padding: 0" class="tab-arrow">
-						<polygon class="board-arrow" points="0 0, 100 0, 50 100" />
-					</svg>
-				</div>
+			<li class="col-xs-12 col-sm-3 col-md-3">
+				<a href="#board" role="tab" data-toggle="tab" target="_self">
+					<p class="board-nav link-name">Board Members</p>
+					<div class="tab-div">
+						<svg viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" width="100%" style="padding: 0" class="tab-arrow">
+							<polygon class="board-arrow" points="0 0, 100 0, 50 100" />
+						</svg>
+					</div>
+				</a>
 			</li>
 			
-			<li class="community-nav col-md-3"><a href="#community" role="tab" data-toggle="tab" target="_self">Community Programs</a>
-				<div class="tab-div">
-					<svg viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" width="100%" style="padding: 0" class="tab-arrow">
-						<polygon class="community-arrow" points="0 0, 100 0, 50 100" />
-					</svg>
-				</div>
+			<li class="col-xs-12 col-sm-3 col-md-3">
+				<a href="#community" role="tab" data-toggle="tab" target="_self">
+					<p class="community-nav link-name">Community Programs</p>
+					<div class="tab-div">
+						<svg viewbox="0 0 100 100" preserveAspectRatio="none" height="100%" width="100%" style="padding: 0" class="tab-arrow">
+							<polygon class="community-arrow" points="0 0, 100 0, 50 100" />
+						</svg>
+					</div>
+				</a>
+			</li>
+		
+		</ul>
+
+		<!-- mobile menu -->
+		<ul class="nav visible-xs col-xs-12">
+			<li role="presentation" class="dropdown">
+			    <a class="dropdown-toggle about-menu-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			      Menu <span class="glyphicon glyphicon-menu-hamburger"></span>
+			    </a>
+			    <ul class="dropdown-menu">
+					<li class="active">
+						<a href="#history" role="tab" data-toggle="tab" target="_self" class="link-mobile">
+							<p>History</p>
+						</a>
+					</li>
+
+					<li>
+						<a href="#mission" role="tab" data-toggle="tab" target="_self" class="link-mobile">
+							<p>Mission</p>
+						</a>
+					</li>
+
+					<li>
+						<a href="#board" role="tab" data-toggle="tab" target="_self" class="link-mobile">
+							<p>Board Members</p>
+						</a>
+					</li>
+					
+					<li>
+						<a href="#community" role="tab" data-toggle="tab" target="_self" class="link-mobile">
+							<p>Community Programs</p>
+						</a>
+					</li>
+			    </ul>
 			</li>
 		</ul>
 	</div>

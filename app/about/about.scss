@@ -4,8 +4,16 @@
 		background-color: unset;
 		border: none;
 	}
+	li {
+		padding: 0;
+	}
 	.nav-tabs {
 		border-bottom: none;
+		a {
+			padding: 0;
+			border: none;
+			margin: 0;
+		}
 	}
 	/* end clear bootstrap*/
 
@@ -24,13 +32,33 @@
 	}
 
 	.nav {
+		padding: 0;
+		.about-menu-toggle {
+			background-color: $title-gray;
+			text-align: right;
+			font-size: 1.2em;
+		}
+		.about-mobile-nav {
+			padding: .5em;
+			margin: 0;
+			background-color: $title-gray;
+			li.active > a {
+				background-color: $title-gray;
+			}
+			.link-mobile {
+				font-family: $header-font;
+			}
+		}
 		text-align: center;
 		/*margin-bottom: 30px;*/
-		li {
-			padding: 0;
-		}
+
 		li, a {
 			color: #fff;
+		}
+		.link-name {
+			font-family: $header-font;
+			padding: .6em;
+			margin: 0;
 		}
 		.tab-div {
 			background-color: white;
