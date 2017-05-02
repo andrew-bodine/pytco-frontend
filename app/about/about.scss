@@ -35,23 +35,22 @@
 		padding: 0;
 		.about-menu-toggle {
 			background-color: $title-gray;
-			text-align: right;
+			text-align: left;
 			font-size: 1.2em;
 		}
-		.about-mobile-nav {
-			padding: .5em;
-			margin: 0;
+		.mobile-dropdown {
 			background-color: $title-gray;
 			li.active > a {
-				background-color: $title-gray;
+				background-color: $light-gray;
 			}
 			.link-mobile {
 				font-family: $header-font;
 			}
+			.link-mobile:hover {
+				background-color: $logo-orange;
+			}
 		}
 		text-align: center;
-		/*margin-bottom: 30px;*/
-
 		li, a {
 			color: #fff;
 		}
