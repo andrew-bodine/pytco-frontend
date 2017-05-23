@@ -43,7 +43,6 @@ function AboutCtrl ($scope, CloudFront) {
       if (parts.length <= 1) continue;
 
       var url = CloudFront.baseUrl + '/' + encodeURI(keys[i]).replace(/\+/g, '%2B');
-      console.log(url);
 
       var positions = parts[0].split('+');
 
