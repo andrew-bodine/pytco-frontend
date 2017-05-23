@@ -6,6 +6,9 @@
 	.album {
 		max-height: 200px;
 	}
+	.caption {
+		min-height: 85px;
+	}
 	img{
 		/*
 			TODO: Don't set height here so we avoid squishing
