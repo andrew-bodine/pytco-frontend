@@ -3,6 +3,7 @@
 		color: $pink-accent;
 		border-bottom: 3px solid $pink-accent;
 		font-size: 2em;
+		margin: 45px 0;
 	}
 	.event-row {
 		margin: 0;
@@ -24,13 +25,14 @@
 		color: $pink-accent;
 	}
 	img {
+		min-width: 100px;
 		width: 100px;
 	}
-	
+
 	.media:nth-of-type(even) {
 		background-color: #f2f2f2;
 	}
-	
+
 	.media-left {
 		vertical-align: middle;
 	}

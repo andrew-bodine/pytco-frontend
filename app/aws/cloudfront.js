@@ -67,4 +67,21 @@ function CloudFront ($http) {
       })
     });
   };
+
+  // getJson fetches json payload with the provided key from CloudFront.
+  this.getJson = function (key) {
+      return new Promise(function (resolve, reject) {
+          var url = baseUrl + '/' + key;
+
+          $http.get(url, {cache: true})
+          .then(
+              function (resp) {
+                  resolve(resp.data);
+              },
+              function (err) {
+                  reject(err);
+              }
+          );
+      })
+  }
 }
