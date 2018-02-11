@@ -14,10 +14,11 @@ module.config(['$routeProvider', function ($routeProvider) {
 module.controller('FilmstripCtrl', [
   '$scope',
   'CloudFront',
+  'Season',
   FilmstripCtrl
 ]);
 
-function FilmstripCtrl ($scope, CloudFront) {
+function FilmstripCtrl ($scope, CloudFront, Season) {
   $scope.images = [];
 
   // TODO (andrew-bodine): Remove the need for this.
@@ -72,4 +73,31 @@ function FilmstripCtrl ($scope, CloudFront) {
   .catch(function (err) {
     console.error('Failed to get filmstrip media from CloudFront: ', err);
   });
+
+  $scope.featured = [];
+
+  // Query for featured events from the season service.
+  Season.getEvents((new Date()).getFullYear())
+  .then(function (events) {
+      var seen = [];
+
+      events.forEach(function (month, idx) {
+          month.forEach(function (e) {
+              if (seen.indexOf(e.title) > -1) return;
+
+              var data = Season.getEventData()[e.title];
+              if (!data.featured) return;
+
+              e.month = Season.months[idx];
+
+              $scope.featured.push(Object.assign(e, data));
+              seen.push(e.title);
+          });
+      });
+
+      $scope.$apply();
+  })
+  .catch(function (err) {
+      console.error('Failed to get event data from season service:', err);
+  })
 }

@@ -49,6 +49,13 @@
 			color: $title-gray;
 			font-weight: bold;
 		}
+		.event-blurb {
+			white-space: nowrap; 
+			overflow: hidden;
+			line-height: 1.5em;
+			max-height: 3em;
+			text-overflow: ellipsis;
+		}
 		.carousel-control {
 			position: relative;
 		}
