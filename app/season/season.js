@@ -67,26 +67,8 @@ function Season(CloudFront) {
                     if (!cache.eventData[e.title]) {
                         var data = Object.assign({}, e);
                         delete data.dateRanges;
+                        delete data.timeRanges;
                         data.image = data.image.replace(/{{\s*cloudfront\s*}}/, CloudFront.baseUrl);
-
-                        // Prepare the times for visualization in 12 hr format. They
-                        // are currently in 24 hour format.
-                        data.timeRanges = data.timeRanges.map(function (tr) {
-                            var times = tr.split('-').map(function (t) {
-                                return t.trim();
-                            });
-
-                            times = times.map(function (t) {
-                                var parts = t.split(':');
-
-                                var hr = parseInt(parts[0]);
-                                parts[0] = (hr > 12) ? (hr - 12).toString() : hr.toString();
-
-                                return parts.join(':') + ((hr >= 12) ? "pm" : "am");
-                            });
-
-                            return times.join('-');
-                        });
                         cache.eventData[e.title] = data;
                     }
 
@@ -113,6 +95,26 @@ function Season(CloudFront) {
                             ptr.days += ' - ';
                             ptr.days += parseInt(ends[1].split('/')[1]).toString();
                         }
+
+                        // Prepare the times for visualization in 12 hr format. They
+                        // are currently in 24 hour format.
+                        ptr.timeRanges = e.timeRanges.map(function (tr) {
+                        // data.timeRanges = data.timeRanges.map(function (tr) {
+                            var times = tr.split('-').map(function (t) {
+                                return t.trim();
+                            });
+
+                            times = times.map(function (t) {
+                                var parts = t.split(':');
+
+                                var hr = parseInt(parts[0]);
+                                parts[0] = (hr > 12) ? (hr - 12).toString() : hr.toString();
+
+                                return parts.join(':') + ((hr >= 12) ? "pm" : "am");
+                            });
+
+                            return times.join('-');
+                        });
 
                         // Put the event pointer into scope events, in the correct
                         // month group.
