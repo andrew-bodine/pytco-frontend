@@ -5,7 +5,10 @@ RUN apt-get autoclean \
  && apt-get install -y \
     curl \
     git-core \
-    ruby
+    ruby \
+    ruby-dev \
+    build-essential \
+    dh-autoreconf
 
 # Sass
 RUN gem install sass --no-ri --no-rdoc
