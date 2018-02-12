@@ -39,7 +39,7 @@ module.exports = function (grunt) {
     },
     html: {
       options: {
-        defaultRootObject: 'index.html'
+        invalidations: ['/*']
       }
     }
   });

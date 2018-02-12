@@ -21,9 +21,6 @@ module.exports = function (grunt) {
     },
 
     release: {
-      // NOTE: It appears that CloudFront will eventually update automatically from the S3 bucket.
-      // For now we will disable the `touch` to the cloudfront that rebuilds the distro. We will
-      // leave this here for now, just to be sure.
       command: 'docker exec pytco-frontend grunt s3; docker exec pytco-frontend grunt cloudfront'
     }
   });
