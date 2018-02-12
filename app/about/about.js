@@ -75,6 +75,7 @@ function AboutCtrl ($scope, CloudFront) {
 
 var hierarchy = [
     'President',
+    'Co President',
     'Vice President',
     'Treasurer',
     'Secretary'
