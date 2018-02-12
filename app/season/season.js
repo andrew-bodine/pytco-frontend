@@ -56,6 +56,10 @@ function Season(CloudFront) {
 
     this.getEvents = function (year) {
         return new Promise(function (resolve, reject) {
+            if (cache.events.length > 0 && Object.keys(cache.eventData).length > 0) {
+                return resolve(cache.events);
+            }
+
             CloudFront.getJson('season/' + year + '.json')
             .then(function (evts) {
 

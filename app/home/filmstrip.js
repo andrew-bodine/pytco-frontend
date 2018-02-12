@@ -79,19 +79,28 @@ function FilmstripCtrl ($scope, CloudFront, Season) {
   // Query for featured events from the season service.
   Season.getEvents((new Date()).getFullYear())
   .then(function (events) {
-      var seen = [];
+      var seen = {};
 
       events.forEach(function (month, idx) {
           month.forEach(function (e) {
-              if (seen.indexOf(e.title) > -1) return;
-
               var data = Season.getEventData()[e.title];
               if (!data.featured) return;
 
+              if (seen[e.title] && seen[e.title].days.indexOf(e.days) > -1) return;
+
+              if (seen[e.title]) {
+                  seen[e.title].days += (", " + e.days);
+
+                  return;
+              }
+
+              console.log(e);
+
               e.month = Season.months[idx];
 
-              $scope.featured.push(Object.assign(e, data));
-              seen.push(e.title);
+              var merged = Object.assign(e, data);
+              $scope.featured.push(merged);
+              seen[e.title] = merged;
           });
       });
 
